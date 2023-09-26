@@ -4,13 +4,15 @@ module.exports = {
   theme: {
     extend: {
       backgroundColor: {
-        'background-black': '#0f0f0f',
+        "background-black": "#0f0f0f",
       },
       fontFamily: {
-        base: ['Roboto', 'sans-serif'],
-      }
+        base: ["Roboto", "sans-serif"],
+      },
     },
   },
-  plugins: [require("@tailwindcss/line-clamp"),
-            require('tailwind-scrollbar')({ nocompatible: true }),],
-}
+  plugins: [
+    require("@tailwindcss/line-clamp"),
+    require("tailwind-scrollbar")({ nocompatible: true }),
+  ],
+};
