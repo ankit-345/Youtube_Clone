@@ -81,7 +81,7 @@ const VideoCard = ({
                   {snippet?.localized?.title}
                 </h3>
               </Link>
-              {
+              { 
                 <div
                   className={`${
                     iconHover ? "visible" : "visible md:invisible"

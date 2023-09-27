@@ -63,23 +63,23 @@ const SingleVideo = ({ menuSwitch, setMenuSwitch }) => {
   };
 
   return (
-    <div className="relative flex">
-      <div
-        className={`z-40 absolute md:hidden top-0 left-0 ${
-          menuSwitch ? "bg-black/60" : "hidden"
-        } h-full w-full`}
-      ></div>
-      <LeftSection menuSwitch={menuSwitch} setMenuSwitch={setMenuSwitch} />
-      <div className="relative max-w-6xl mx-auto mt-7 text-white md:flex">
+    // <div className="relative flex ">
+    //   <div
+    //     className={`z-40 absolute md:hidden top-0 left-0 ${
+    //       menuSwitch ? "bg-black/60" : "hidden"
+    //     } h-full w-full`}
+    //   ></div>
+    //   <LeftSection menuSwitch={menuSwitch} setMenuSwitch={setMenuSwitch} />
+      <div className="relative max-w-6xl mx-auto mt-7 text-white md:flex ">
         <div className="w-full md:w-[62.5%] mb-6 ">
-          <iframe
-            className="md:rounded-xl aspect-video w-full h-auto md:w-[716px] md:h-[403px] sticky md:relative top-[61px] md:top-auto z-30"
-            src={`https://www.youtube.com/embed/${id}`}
-            title={videoInfo?.snippet?.title}
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>
+            <iframe
+              className="md:rounded-xl aspect-video w-full h-auto md:w-[716px] md:h-[403px] sticky md:relative top-[61px] md:top-auto z-30"
+              src={`https://www.youtube.com/embed/${id}`}
+              title={videoInfo?.snippet?.title}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
           <div>
             <h2 className="text-lg font-bold mt-3 mb-4 px-3 md:px-0">
               {videoInfo?.snippet?.title}
@@ -147,7 +147,7 @@ const SingleVideo = ({ menuSwitch, setMenuSwitch }) => {
                     Share
                   </button>
                 </div>
-                <div className="rounded-full bg-gray-50 bg-opacity-5 h-9 w-9 flex justify-center items-center hover:bg-opacity-10 cursor-pointer">
+                <div className="rounded-full bg-gray-50 bg-opacity-5 h-9 w-9 flex justify-center items-center hover:bg-opacity-10 cursor-pointer" >
                   <FontAwesomeIcon icon={faEllipsis} />
                 </div>
               </div>
@@ -237,7 +237,7 @@ const SingleVideo = ({ menuSwitch, setMenuSwitch }) => {
           <VideoRecommend id={id} />
         </div>
       </div>
-    </div>
+    // </div>
   );
 };
 

@@ -14,6 +14,7 @@ const WatchLater = ({ menuSwitch, setMenuSwitch }) => {
       return movieIds.indexOf(val.videoId) === index;
     });
     setWatchLaterVideo(uniqueMovies);
+    localStorage.setItem("FavouriteVideo", JSON.stringify(uniqueMovies));
   };
 
   useEffect(() => {
@@ -33,7 +34,7 @@ const WatchLater = ({ menuSwitch, setMenuSwitch }) => {
 
   return (
     <>
-      <div className="relative flex">
+      <div className="relative flex min-h-screen">
         <div
           className={`z-40 absolute md:hidden top-0 left-0 ${
             menuSwitch ? "bg-black/60" : "hidden"
@@ -54,7 +55,7 @@ const WatchLater = ({ menuSwitch, setMenuSwitch }) => {
                 />
               ))
             ) : (
-              <div className="text-white text-center col-start-2 text-2xl">
+              <div className="text-white text-center md:col-start-2 md:text-2xl text-base">
                 No Favourite Videos Selected
               </div>
             )}

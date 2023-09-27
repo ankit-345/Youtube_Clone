@@ -19,7 +19,6 @@ const VideoRecommend = ({ id }) => {
         `${feed_url}${pageToken}&key=${process.env.REACT_APP_API_KEY}`,
       );
       setVideoRecommend(res.data.items);
-      // console.log(res.data.items);
       setPageToken(res.data.nextPageToken);
     } catch (err) {
       console.log(err);
@@ -42,6 +41,14 @@ const VideoRecommend = ({ id }) => {
     setVideoRecommend([]);
     getRelatedVideos();
   }, [id]);
+
+  const handleWatchLater = (e, video) => {
+    e.preventDefault();
+    const oldVideoList =
+      JSON.parse(localStorage.getItem("FavouriteVideo")) || [];
+    const newVideoList = [...oldVideoList, video];
+    localStorage.setItem("FavouriteVideo", JSON.stringify(newVideoList));
+  };
 
   return (
     <div className="w-full h-full md:p-4 py-4">
@@ -114,6 +121,7 @@ const VideoRecommend = ({ id }) => {
                 snippet={item?.snippet}
                 statistics={item?.statistics}
                 contentDetails={item?.contentDetails}
+                handleWatchLater={handleWatchLater}
                 key={item?.etag}
               />
             </div>
